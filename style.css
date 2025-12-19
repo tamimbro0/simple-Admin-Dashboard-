@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Luxurious+Roman&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Science+Gothic:wght@100..900&family=Varela+Round&display=swap');
+
+:root {
+    /* ===== Colors ===== */
+    --primary: #2563eb;
+    --secondary: #96aed5;
+    --accent: #22c55e;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+  
+    /* ===== Backgrounds ===== */
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-sidebar: #020617;
+    --bg-hover: #e5e7eb;
+  
+    /* ===== Text ===== */
+    --text-primary: #020617;
+    --text-secondary: #64748b;
+    --text-white: #ffffff;
+    --text-muted: #94a3b8;
+  
+    /* ===== Font ===== */
+    --font-main: 'Poppins', sans-serif;
+  
+    /* ===== Border & Radius ===== */
+    --border-color: #e2e8f0;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+  
+    /* ===== Shadow ===== */
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  
+    /* ===== Spacing ===== */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+  
+    /* ===== Transition ===== */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: 0;
+    list-style: none;
+    align-items: none;
+    appearance: none;
+}
+
+
+body{
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    height: 100vh;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;
+    background-color: var(--bg-hover);
+}
+
+.container{
+    display: grid;
+    width: 96%;
+    gap: 1.8rem;
+    grid-template-columns: 14rem auto 14rem;
+    margin: 0 auto;
+}
+a{
+    color: var(--bg-sidebar);
+}
+h1{
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+h2{
+    font-size: 1.4rem;
+}
+h3{
+    font-size: 0.87rem;
+}
+h4{
+    font-size: 0.8;
+}
+h5{
+    font-size: 0.77rem;
+}
+
+small{
+    font-size: 0.75;
+}
+
+.profile-photo img{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.text-muted{
+    color: var(--text-muted);
+}
+p{
+    color: var(--bg-sidebar);
+}
+b{
+    color: var(--bg-sidebar);
+}
+.primary{
+    color: var(--primary);
+}
+.success{
+    color: var(--accent);
+}
+.danger{
+    color: var(--danger);
+}
+.warning{
+    color: var(--warning);
+}
+
+
+/* Side degin */
+
+aside{
+    width: 14rem;
+
+}
+aside .top{
+    background-color: var(--bg-card);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.4rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+aside .logo{
+    display: flex;
+    gap: 1rem;
+}
+aside .close{
+    display: none;
+}
+
+/* ..............
+sidebar
+................. */
+
+
+aside .sidebar{
+    background-color: var(--bg-card);
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    position: relative;
+    top: 1rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+
+}
+aside h3{
+    font-weight: 500;
+}
+aside .sidebar a{
+    display: flex;
+    color: var(--bg-sidebar);
+    margin-left: 2rem;
+    gap: 1rem;
+    align-items: center;
+    height: 3.2rem;
+    transition: all 0.3s ease-in;
+}
+aside .sidebar a span{
+    font-size: 1.6rem;
+    transition: all 0.3s ease-in;
+}
+aside .sidebar a:last-child{
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+}
+
+aside .sidebar a.active{
+    background-color: var(--secondary);
+    color: var(--primary);
+    margin-left: 0;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+aside .sidebar a.active::before{
+    content: "";
+    width: 4px;
+    height: 100%;
+    background-color: var(--primary);
+}
+aside .sidebar a:hover{
+    color: var(--primary);
+    transition: 0.4s ease;
+}
+aside .sidebar a:hover span{
+    margin-left: 0.8rem;
+}
+aside .sidebar a span .inbox{
+    background-color: var(--danger);
+    color: var(--bg-card);
+    padding: 2px 5px;
+    font-size: 11px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+
+}
+
+
+
+
+/* ......................
+Start main section style
+.........................*/
+
+main{
+    margin-top: 1.4rem;
+    width: 100%;
+}
+
+main .date{
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--bg-card);
+    border-radius: var(--radius-md);
+    margin-top: 1rem;
+    padding: 0.5rem 1.6rem;
+    box-shadow: var(--shadow-sm);
+}
+
+main .date input{
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--bg-sidebar);
+    cursor: pointer;
+    font-family: var(--font-main);
+
+}
+
+main .insides{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) ;
+
+    gap: 1.7rem;
+}
+main .insides>div{
+    background-color: var(--bg-main);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    margin-top: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+
+main .insides>div:hover{
+    box-shadow: var(--shadow-md);
+    transform:translateY(-4px) ;
+}
+
+main .insides>div span{
+    background: #22c55e;
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: var(--bg-main);
+    font-size: 2rem;
+}
+
+main .insides .sales span {
+    background: var(--primary);
+}
+
+main .insides .expenses span{
+    background: var(--danger);
+}
+main .insides .income span {
+    background: var(--accent);
+}
+
+main .insides > div .middle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+main .insides >div .middle h1{
+    font-size: 1.6rem;
+}
+main h1{
+    color: var(--bg-sidebar);
+}
+main .insides{
+    color: var(--bg-sidebar);
+}
+main .insides h3{
+    color: var(--bg-sidebar);
+}
+main .insides p{
+    color: var(--bg-sidebar);
+}
+
+
+main .insides .progress{
+    position: relative;
+    height: 68px;
+    width: 68px;
+    border-radius: 50px;
+}
+main .insides svg{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 0;
+}
+
+main .insides svg circle{
+    fill: none;
+    stroke: var(--primary);
+    transform: rotate(270 , 80 , 80);
+    stroke-width: 5;
+}
+
+main .insides .sales circle{
+    stroke-dashoffset: 10;
+    stroke-dasharray: 150;
+}
+main .insides .expenses circle{
+    stroke: var(--danger);
+    stroke-dashoffset: 67;
+    stroke-dasharray: 150;
+}
+main .insides .income circle{
+    stroke: var(--accent);
+    stroke-dashoffset: 37;
+    stroke-dasharray: 150;
+}
+
+main .insides .progress .number{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .recent-order{
+    margin-top: 2rem;
+}
+main .recent-order h2{
+    color: var(--bg-sidebar);
+}
+main .recent-order table{
+    background-color: var(--bg-card);
+    width: 100%;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.9s ease;
+    color: var(--bg-sidebar);
+}
+
+main .recent-order table:hover{
+    box-shadow: none;
+}
+main table tbody tr{
+    height: 3.8rem;
+    border-bottom: 1px solid var(--bg-sidebar);
+    color: var(--bg-sidebar);
+}
+main table tbody td{
+    height: 3.8rem;
+    border-bottom: 1px solid var(--bg-sidebar);
+}
+
+main table tbody tr:last-child td{
+    border: none;
+}
+main .recent-order a{
+    text-align: center;
+    display: block;
+    margin: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+/* ....................
+Start Right side css
+........................*/
+
+.right{
+    margin-top: 1.4rem;
+}
+
+.right h2{
+    color: var(--bg-sidebar);
+}
+.right .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.right .top button{
+    display: none;
+}
+
+.right .theme-toggler {
+    background-color:var(--bg-card) ;
+    display: flex;
+    justify-content: space-between;
+    height: 1.5rem;
+    width: 4.2rem;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+
+.right .theme-toggler span{
+    font-size: 1.3rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right .theme-toggler span:active{
+    background-color: var(--primary);
+    color: var(--bg-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+.right .top .profile{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    text-align: left;
+}
+
+.right .info p b{
+    color: var(--bg-sidebar);
+}
+
+.right .info h3{
+    color: var(--bg-sidebar);
+}
+
+.right .item h3{
+    color: var(--bg-sidebar);
+}
+
+
+/*  Recent Update */
+
+.right .right .recent-updates {
+    margin-top: 1rem;
+    margin-left: 20px;
+}
+
+.right .recent-update .updates{
+    background-color: var(--bg-card);
+    padding: 0.8rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+.right .recent-update .updates:hover{
+    box-shadow: none;
+}
+.right .recent-update .update{
+    display: grid;
+    grid-template-columns: 2.6rem auto;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+
+/* Sale Analytics */
+
+.right .sale-analytic {
+    margin-top: 2rem;
+
+}
+.right .sale-analytic .item-online{
+    background-color: var(--bg-card);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1;
+    margin: 10px 0;
+    width: 100%;
+    margin-bottom: 0.8rem;
+    padding: 1.4rem ;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+.right .sale-analytic .item-online:hover{
+    box-shadow: none;
+}
+.right .sale-analytic .item-online .icon{
+    background: #78ba90;
+    padding: 0.6rem;
+    color: rgb(0, 0, 0);
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    display: flex;               
+    align-items: center;       
+    justify-content: center; 
+}
+
+.right .sale-analytic .item-online:nth-child(3) .icon{
+    background: var(--accent);
+}
+
+.right .sale-analytic .item-online:nth-child(4) .icon{
+    background: var(--danger);
+}
+
+.add-item div{
+    display: flex;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed;
+    color: var(--bg-sidebar);
+    margin-bottom: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
